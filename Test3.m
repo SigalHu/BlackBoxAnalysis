@@ -24,7 +24,7 @@ for ii = 1:repeat_count
 end
 data_out = abs(data_out)/repeat_count;
 
-% ÆµÆ×
+% Ê±Óò
 figure;
 plot(t,data_out(1:length(t)));
 xlabel('t/s');ylabel('A');
