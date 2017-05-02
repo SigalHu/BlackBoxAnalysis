@@ -1,10 +1,9 @@
 clear;close all;clc;
 
 A = 1;
-fc = 6e2;
-data_len = 100000;
+fs=1e6;
+data_len = 1e7;
 
-fs = 4*fc;
 delta_t = 1/fs;
 t = (0:data_len-1).' * delta_t;
 
@@ -40,7 +39,8 @@ r = 0:deta_r:end_r;
 pdf_stat = hist(data_out_abs.',r).';
 
 figure;
-plot(r,pdf_stat/(length(data_out_abs)*deta_r),'k*');
+plot(r,pdf_stat/(length(data_out_abs)*deta_r),'b*');
+xlabel('r');ylabel('f(r)');
 zoom xon;grid on;
 
 % Êµ²¿
@@ -52,7 +52,8 @@ r = -1*end_r:deta_r:end_r;
 pdf_stat = hist(data_out_I.',r).';
 
 figure;
-plot(r,pdf_stat/(length(data_out_I)*deta_r),'k*');
+plot(r,pdf_stat/(length(data_out_I)*deta_r),'b*');
+xlabel('r');ylabel('f(r)');
 zoom xon;grid on;
 
 % Ðé²¿
@@ -64,6 +65,7 @@ r = -1*end_r:deta_r:end_r;
 pdf_stat = hist(data_out_Q.',r).';
 
 figure;
-plot(r,pdf_stat/(length(data_out_Q)*deta_r),'k*');
+plot(r,pdf_stat/(length(data_out_Q)*deta_r),'b*');
+xlabel('r');ylabel('f(r)');
 zoom xon;grid on;
 

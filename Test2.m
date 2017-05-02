@@ -1,10 +1,10 @@
 clear;close all;clc;
 
 A = 1;
-fc = 6e2;
+fs = 1e6;
 data_len = 1000000;
 
-fs = 4*fc;
+fc = fs/4;
 delta_t = 1/fs;
 t = (1:data_len).' * delta_t;
 
