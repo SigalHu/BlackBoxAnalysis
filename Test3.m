@@ -1,3 +1,4 @@
+%% 分析时域
 clear;close all;clc;
 
 repeat_count = 1e5;
@@ -14,7 +15,8 @@ data_in = A*[ones(1,1);zeros(length(t)-1,1)];
 
 % 时域
 figure;
-plot(t,data_in);
+stem(t(1),data_in(1));
+axis([0,0.0002,0,2]);
 xlabel('t/s');ylabel('A');
 grid on;zoom xon;
 
@@ -25,8 +27,10 @@ end
 data_out = abs(data_out)/repeat_count;
 
 % 时域
+loc = find(data_out>0.009);
 figure;
-plot(t,data_out(1:length(t)));
+stem(t(loc),data_out(loc));
+axis([0,0.0002,0,2]);
 xlabel('t/s');ylabel('A');
 grid on;zoom xon;
 
